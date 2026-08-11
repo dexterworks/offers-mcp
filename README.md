@@ -24,15 +24,53 @@ The hosted server speaks streamable HTTP at:
 https://offers-engine.dexter-works.com/mcp
 ```
 
-**Claude Code**
+### Claude Code
 
 ```bash
 claude mcp add --transport http offers https://offers-engine.dexter-works.com/mcp
 ```
 
-**Claude Desktop / other MCP clients** — add a remote server with the URL
-above, or via [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) for
-clients that only support stdio:
+### Claude Desktop / claude.ai (no terminal needed)
+
+1. Open **Settings** → **Connectors** (paid plans).
+2. Click **Add custom connector**.
+3. Name it `Offers`, paste the URL `https://offers-engine.dexter-works.com/mcp`, and save.
+4. In a new chat, make sure Offers is enabled in the tools/connectors menu — then just ask your shopping question.
+
+### ChatGPT
+
+1. **Settings** → **Apps & Connectors** → **Advanced settings** → enable **Developer mode** (Plus/Pro/Team plans).
+2. Back in **Connectors**, choose **Create** / add a custom connector.
+3. Name it `Offers`, MCP server URL `https://offers-engine.dexter-works.com/mcp`, authentication: **none**.
+4. In a chat, enable the Offers connector from the tools menu and ask away.
+
+### Cursor
+
+Add to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global):
+
+```json
+{ "mcpServers": { "offers": { "url": "https://offers-engine.dexter-works.com/mcp" } } }
+```
+
+### VS Code (GitHub Copilot)
+
+Add to `.vscode/mcp.json`:
+
+```json
+{ "servers": { "offers": { "type": "http", "url": "https://offers-engine.dexter-works.com/mcp" } } }
+```
+
+### Windsurf
+
+Add to `~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{ "mcpServers": { "offers": { "serverUrl": "https://offers-engine.dexter-works.com/mcp" } } }
+```
+
+### Any stdio-only MCP client
+
+Use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) as a bridge:
 
 ```json
 {
@@ -44,6 +82,9 @@ clients that only support stdio:
   }
 }
 ```
+
+> Client UIs move fast — if a menu path above is stale,
+> [open an issue](https://github.com/dexterworks/offers-mcp/issues) and we'll fix it.
 
 Then ask your assistant something like:
 
@@ -92,10 +133,11 @@ families) are on the roadmap.
 
 ## Sources, limits, and expectations
 
-- **Sources:** offers currently come from Google Shopping, with eBay and
-  Best Buy integrations rolling out (each response lists exactly what was
-  queried in `meta.sources_queried`). GTIN inputs are resolved via UPCitemdb.
-  More sources are added as the normalization layer proves out.
+- **Sources:** offers currently come from Google Shopping, with retailer-direct
+  integrations (Best Buy, Walmart) rolling out (each response lists exactly
+  what was queried in `meta.sources_queried`). GTIN inputs are resolved via
+  Icecat and UPCitemdb. More sources are added as the normalization layer
+  proves out.
 - **Latency:** a cold query takes roughly 5–15 seconds (live upstream
   lookups); repeated queries hit a short-lived cache and return in
   milliseconds. Configure generous tool timeouts.

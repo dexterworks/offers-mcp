@@ -102,7 +102,12 @@ Use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) as a bridge:
 
 Then ask your assistant something like:
 
-> Am I getting a good deal on the Sony WH-1000XM6 at $398? I'm in 83702.
+> Use Offers MCP to check if I'm getting a good deal on the Sony WH-1000XM6 at $398. I'm in 83702.
+
+Naming the tool matters: assistants have their own web search and will often
+reach for it first on shopping questions. Saying "use Offers MCP" (or enabling
+only this connector for the chat) makes sure your question hits live
+structured offers instead of search snippets.
 
 ## REST API
 

@@ -1,4 +1,4 @@
-# Offers MCP — by Dexter Works
+# Offers MCP
 
 **Am I getting the best deal on this exact product?**
 

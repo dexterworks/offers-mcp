@@ -151,6 +151,29 @@ families) are on the roadmap.
   (`event: message` / `data: {...}`) per MCP streamable HTTP; MCP clients
   handle this for you.
 
+## Privacy
+
+We built Offers for ourselves first, and we treat your searches the way we'd
+want ours treated.
+
+- **What we see:** the product you searched, the zip code you optionally
+  provide, and coarse technical context (which kind of client connected,
+  country/region). There are no accounts — we couldn't tie searches to your
+  name if we wanted to.
+- **What we don't keep:** raw IP addresses are never stored; unique usage is
+  counted with a hash that changes daily and can't be reversed.
+- **What it's used for:** one thing — making results better (match accuracy,
+  merchant coverage, speed).
+- **What we will never do:** sell your data, share it with advertisers or
+  data brokers, or build shopping profiles of you. Full stop.
+- **Merchants can't watch you compare.** All price comparison happens on our
+  servers; a merchant learns about you only if you click through to their
+  site to buy. Some outbound links may earn us an affiliate commission at no
+  cost to you — commissions never influence ranking (trust tiers and landed
+  cost decide, and that logic treats every merchant the same).
+
+Questions or want something deleted? [hello@dexter-works.com](mailto:hello@dexter-works.com).
+
 ## Status & support
 
 Early v0 — US consumer goods, a small set of sources done honestly. If a

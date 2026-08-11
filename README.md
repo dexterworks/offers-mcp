@@ -2,7 +2,7 @@
 
 **Every offer. One call.**
 
-Offers MCP gives deep purchase intelligence to AI agents, applications, and humans. Point
+Deep purchase intelligence for AI agents, applications, and humans. Point
 it at a product (free text like `Sony WH-1000XM6 black`, or a GTIN/UPC/EAN
 barcode), add an optional US zip code, and one call scans merchants in
 parallel to return live prices, true cost, delivery options, and trust
@@ -13,7 +13,7 @@ informed purchase decisions.
 
 - **Live prices with true landed cost** (price + shipping, the number that actually matters)
 - **Delivery window for your zip code**
-- **Curated merchant trust tier** (A/B/C, no pay-to-rank), with untrusted listings filtered
+- **Merchant trust scores** (no pay-to-rank), with untrusted listings filtered
 - **Confidence scores** on the product match and on every offer, so your agent knows when to assert and when to hedge. When we're not sure, the response says so instead of guessing
 - A computed **best trusted offer** and **fastest trusted offer**, plus the full option list. The final call stays with your user
 - **Provenance on everything:** every offer names its source and the moment it was checked (`checked_at`, cache status)
@@ -133,7 +133,7 @@ families) are on the roadmap.
   "product": { "name": "Sony WH-1000XM6…", "brand": "Sony", "resolution_confidence": 0.9 },
   "offers": [
     {
-      "merchant": { "name": "Best Buy", "trust": { "tier": "A", "score": 0.95 } },
+      "merchant": { "name": "Best Buy", "trust": { "score": 95 } },
       "price": { "amount": 398.0, "list_price": 449.99, "discount_pct": 11.6 },
       "fulfillment": {
         "landed_cost": 398.0,
@@ -190,7 +190,7 @@ want ours treated.
 - **Merchants can't watch you compare.** All price comparison happens on our
   servers; a merchant learns about you only if you click through to their
   site to buy. Some outbound links may earn us an affiliate commission at no
-  cost to you, and commissions never influence ranking (trust tiers and landed
+  cost to you, and commissions never influence ranking (trust scores and landed
   cost decide, and that logic treats every merchant the same).
 
 Questions or want something deleted? [hello@dexter-works.com](mailto:hello@dexter-works.com).

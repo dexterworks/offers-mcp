@@ -18,9 +18,9 @@ informed purchase decisions.
 - A computed **best trusted offer** and **fastest trusted offer**, plus the full option list. The final call stays with your user
 - **Provenance on everything:** every offer names its source and the moment it was checked (`checked_at`, cache status)
 
-**Private. Nobody watches you shop:** no accounts, no profiles, no raw IPs
-stored; searches are never sold, shared, or used for advertising (details in
-[Privacy](#privacy)).
+**Private. Nobody watches you shop:** no per-user tracking, no raw IPs
+stored; searches stay private: never sold, shared, or used to retarget you
+(details in [Privacy](#privacy)).
 
 **Efficient. Shop thousands of stores in seconds:** one input fans out to
 multiple sources at once and comes back normalized into one structured
@@ -179,14 +179,14 @@ want ours treated.
 
 - **What we see:** the product you searched, the zip code you optionally
   provide, and coarse technical context (which kind of client connected,
-  country/region). There are no accounts; we couldn't tie searches to your
-  name if we wanted to.
+  country/region). We don't track individuals or build per-user shopping
+  profiles, and anonymous use requires no account at all.
 - **What we don't keep:** raw IP addresses are never stored; unique usage is
   counted with a hash that changes daily and can't be reversed.
 - **What it's used for:** one thing: making results better (match accuracy,
   merchant coverage, speed).
 - **What we will never do:** sell your data, share it with advertisers or
-  data brokers, or build shopping profiles of you. Full stop.
+  data brokers, or use your searches to retarget you. Full stop.
 - **Merchants can't watch you compare.** All price comparison happens on our
   servers; a merchant learns about you only if you click through to their
   site to buy. Some outbound links may earn us an affiliate commission at no

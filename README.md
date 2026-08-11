@@ -12,14 +12,14 @@ informed purchase decisions.
 **Robust. Built to be trusted:**
 
 - **Live prices with true landed cost** (price + shipping, the number that actually matters)
-- **Delivery window for your zip code**
+- **Delivery windows for a given zip code**
 - **Merchant trust scores** (no pay-to-rank), with untrusted listings filtered
 - **Confidence scores** on the product match and on every offer, so your agent knows when to assert and when to hedge. When we're not sure, the response says so instead of guessing
 - A computed **best trusted offer** and **fastest trusted offer**, plus the full option list. The final call stays with your user
 - **Provenance on everything:** every offer names its source and the moment it was checked (`checked_at`, cache status)
 
-**Private. Nobody watches you shop:** no per-user tracking, no raw IPs
-stored; searches stay private: never sold, shared, or used to retarget you
+**Private. Nobody watches users shop:** no per-user tracking, no raw IPs
+stored; queries stay private: never sold, shared, or used for retargeting
 (details in [Privacy](#privacy)).
 
 **Efficient. Shop thousands of stores in seconds:** one input fans out to
@@ -186,9 +186,9 @@ want ours treated.
 - **What it's used for:** one thing: making results better (match accuracy,
   merchant coverage, speed).
 - **What we will never do:** sell your data, share it with advertisers or
-  data brokers, or use your searches to retarget you. Full stop.
+  data brokers, or use queries for retargeting. Full stop.
 - **Merchants can't watch you compare.** All price comparison happens on our
-  servers; a merchant learns about you only if you click through to their
+  servers; a merchant learns about a shopper only at click-through to their
   site to buy. Some outbound links may earn us an affiliate commission at no
   cost to you, and commissions never influence ranking (trust scores and landed
   cost decide, and that logic treats every merchant the same).

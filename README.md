@@ -13,7 +13,7 @@ informed purchase decisions.
 
 - **Live prices with true landed cost** (price + shipping, the number that actually matters)
 - **Delivery window for your zip code**
-- **Curated merchant trust tier** (A/B/C, no pay-to-rank), with scam-priced listings filtered out
+- **Curated merchant trust tier** (A/B/C, no pay-to-rank), with untrusted listings filtered
 - **Confidence scores** on the product match and on every offer, so your agent knows when to assert and when to hedge. When we're not sure, the response says so instead of guessing
 - A computed **best trusted offer** and **fastest trusted offer**, plus the full option list. The final call stays with your user
 - **Provenance on everything:** every offer names its source and the moment it was checked (`checked_at`, cache status)

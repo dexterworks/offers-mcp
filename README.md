@@ -21,13 +21,13 @@ No signup. No API key. No commitment.
 The hosted server speaks streamable HTTP at:
 
 ```
-https://offers-mcp.dexter-works.com/mcp
+https://offers-engine.dexter-works.com/mcp
 ```
 
 **Claude Code**
 
 ```bash
-claude mcp add --transport http offers https://offers-mcp.dexter-works.com/mcp
+claude mcp add --transport http offers https://offers-engine.dexter-works.com/mcp
 ```
 
 **Claude Desktop / other MCP clients** — add a remote server with the URL
@@ -39,7 +39,7 @@ clients that only support stdio:
   "mcpServers": {
     "offers": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://offers-mcp.dexter-works.com/mcp"]
+      "args": ["-y", "mcp-remote", "https://offers-engine.dexter-works.com/mcp"]
     }
   }
 }
@@ -54,7 +54,7 @@ Then ask your assistant something like:
 The same engine is available over plain HTTP:
 
 ```bash
-curl "https://offers-mcp.dexter-works.com/api/search_offers?q=Sony%20WH-1000XM6%20black&zip=83702"
+curl "https://offers-engine.dexter-works.com/api/search_offers?q=Sony%20WH-1000XM6%20black&zip=83702"
 ```
 
 ## Tools

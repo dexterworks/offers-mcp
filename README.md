@@ -3,30 +3,30 @@
 **Every offer. One call.**
 
 Offers MCP is structured deal research for AI agents, applications, and humans. Point
-it at a product — free text like `Sony WH-1000XM6 black`, or a GTIN/UPC/EAN
-barcode — add an optional US zip code, and one call scans merchants in
+it at a product (free text like `Sony WH-1000XM6 black`, or a GTIN/UPC/EAN
+barcode), add an optional US zip code, and one call scans merchants in
 parallel to return live prices, true cost, delivery options, and trust
 insights. Robust, private, efficient results for agents, applications, and humans to make
 informed purchase decisions.
 
-**Robust — built to be trusted:**
+**Robust. Built to be trusted:**
 
-- **Live prices with true landed cost** (price + shipping — the number that actually matters)
+- **Live prices with true landed cost** (price + shipping, the number that actually matters)
 - **Delivery window for your zip code**
-- **Curated merchant trust tier** (A/B/C — no pay-to-rank), with scam-priced listings filtered out
-- **Confidence scores** on the product match and on every offer, so your agent knows when to assert and when to hedge — when we're not sure, the response says so instead of guessing
-- A computed **best trusted offer** and **fastest trusted offer**, plus the full option list — the final call stays with your user
+- **Curated merchant trust tier** (A/B/C, no pay-to-rank), with scam-priced listings filtered out
+- **Confidence scores** on the product match and on every offer, so your agent knows when to assert and when to hedge. When we're not sure, the response says so instead of guessing
+- A computed **best trusted offer** and **fastest trusted offer**, plus the full option list. The final call stays with your user
 - **Provenance on everything:** every offer names its source and the moment it was checked (`checked_at`, cache status)
 
-**Private — nobody watches you shop:** no accounts, no profiles, no raw IPs
+**Private. Nobody watches you shop:** no accounts, no profiles, no raw IPs
 stored; searches are never sold, shared, or used for advertising (details in
 [Privacy](#privacy)).
 
-**Efficient — shop thousands of stores in seconds:** one input fans out to
+**Efficient. Shop thousands of stores in seconds:** one input fans out to
 multiple sources at once and comes back normalized into one structured
 contract you can build against. Repeat lookups return instantly. Use it for a
 cross-vendor price check from the store aisle or programmatic lookups inside
-your own application — same tool call, same answers.
+your own application. Same tool call, same answers.
 
 Free during v0. No signup. No API key. No commitment.
 
@@ -49,7 +49,7 @@ claude mcp add --transport http offers https://offers-engine.dexter-works.com/mc
 1. Open **Settings** → **Connectors** (paid plans).
 2. Click **Add custom connector**.
 3. Name it `Offers`, paste the URL `https://offers-engine.dexter-works.com/mcp`, and save.
-4. In a new chat, make sure Offers is enabled in the tools/connectors menu — then just ask your shopping question.
+4. In a new chat, make sure Offers is enabled in the tools/connectors menu, then just ask your shopping question.
 
 ### ChatGPT
 
@@ -97,7 +97,7 @@ Use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) as a bridge:
 }
 ```
 
-> Client UIs move fast — if a menu path above is stale,
+> Client UIs move fast. If a menu path above is stale,
 > [open an issue](https://github.com/dexterworks/offers-mcp/issues) and we'll fix it.
 
 Then ask your assistant something like:
@@ -118,7 +118,7 @@ curl "https://offers-engine.dexter-works.com/api/search_offers?q=Sony%20WH-1000X
 |---|---|---|
 | `search_offers` | `query` (text or GTIN), `zip` (optional, 5-digit US) | Normalized offers + best/fastest trusted offer |
 
-More tools (`identify_product` — GTIN/URL/image resolution and variant
+More tools (`identify_product` for GTIN/URL/image resolution and variant
 families) are on the roadmap.
 
 ## Response shape (abridged)
@@ -147,7 +147,7 @@ families) are on the roadmap.
 
 ## Sources, limits, and expectations
 
-- **Sources — quality data, not screen-scraping:** we work through official
+- **Sources (quality data, not screen-scraping):** we work through official
   merchant and catalog partner programs and structured data sources so
   results stay accurate rather than brittle. Today offers come from Google
   Shopping, with retailer-direct integrations (Best Buy, Walmart) rolling
@@ -157,7 +157,7 @@ families) are on the roadmap.
 - **Latency:** a cold query takes roughly 5–15 seconds (live upstream
   lookups); repeated queries hit a short-lived cache and return in
   milliseconds. Configure generous tool timeouts.
-- **Rate limits / fair use:** free during v0 with no hard published limit —
+- **Rate limits / fair use:** free during v0 with no hard published limit;
   please stay under ~50 requests/day per user. Heavy or commercial use:
   contact us first. The endpoint may evolve; breaking changes will be
   announced in this repo.
@@ -174,29 +174,29 @@ want ours treated.
 
 - **What we see:** the product you searched, the zip code you optionally
   provide, and coarse technical context (which kind of client connected,
-  country/region). There are no accounts — we couldn't tie searches to your
+  country/region). There are no accounts; we couldn't tie searches to your
   name if we wanted to.
 - **What we don't keep:** raw IP addresses are never stored; unique usage is
   counted with a hash that changes daily and can't be reversed.
-- **What it's used for:** one thing — making results better (match accuracy,
+- **What it's used for:** one thing: making results better (match accuracy,
   merchant coverage, speed).
 - **What we will never do:** sell your data, share it with advertisers or
   data brokers, or build shopping profiles of you. Full stop.
 - **Merchants can't watch you compare.** All price comparison happens on our
   servers; a merchant learns about you only if you click through to their
   site to buy. Some outbound links may earn us an affiliate commission at no
-  cost to you — commissions never influence ranking (trust tiers and landed
+  cost to you, and commissions never influence ranking (trust tiers and landed
   cost decide, and that logic treats every merchant the same).
 
 Questions or want something deleted? [hello@dexter-works.com](mailto:hello@dexter-works.com).
 
 ## Status & support
 
-Early v0 — US consumer goods, a small set of sources done honestly. If a
+Early v0: US consumer goods, a small set of sources done honestly. If a
 field can't be trusted, it's `null` rather than guessed.
 
 Found a bad result, wrong price, or a bug? **Open a
-[GitHub issue](https://github.com/dexterworks/offers-mcp/issues)** — bad-match
+[GitHub issue](https://github.com/dexterworks/offers-mcp/issues)**. Bad-match
 reports with the exact query are especially valuable right now.
 
 Built by [Dexter Works](https://dexter-works.com).

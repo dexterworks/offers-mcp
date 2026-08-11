@@ -1,20 +1,34 @@
 # Offers MCP
 
-**Am I getting the best deal on this exact product?**
+**Every offer. One call.**
 
-Offers is an MCP server that gives AI assistants normalized purchase offers
-for a specific product. Give it a product — free text like
-`Sony WH-1000XM6 black`, or a GTIN/UPC/EAN — plus an optional US zip code, and
-it returns structured offers across merchants:
+Offers MCP is structured deal research for AI agents and applications. Point
+it at a product — free text like `Sony WH-1000XM6 black`, or a GTIN/UPC/EAN
+barcode — add an optional US zip code, and one call scans merchants in
+parallel to return live prices, true cost, delivery options, and trust
+insights. Robust, private, efficient results for agents and humans to make
+informed purchase decisions.
 
-- **Price, shipping, and landed cost** (the number that actually matters)
+**Robust — built to be trusted:**
+
+- **Live prices with true landed cost** (price + shipping — the number that actually matters)
 - **Delivery window for your zip code**
-- **Merchant trust tier** (curated A/B/C — no pay-to-rank)
-- **Match confidence** per offer, so your agent knows when to trust a result
-- A computed **best trusted offer** and **fastest trusted offer**
-- Honest freshness: every offer carries `checked_at` and cache status
+- **Curated merchant trust tier** (A/B/C — no pay-to-rank), with scam-priced listings filtered out
+- **Confidence scores** on the product match and on every offer, so your agent knows when to assert and when to hedge — when we're not sure, the response says so instead of guessing
+- A computed **best trusted offer** and **fastest trusted offer**, plus the full option list — the final call stays with your user
+- **Provenance on everything:** every offer names its source and the moment it was checked (`checked_at`, cache status)
 
-No signup. No API key. No commitment.
+**Private — nobody watches you shop:** no accounts, no profiles, no raw IPs
+stored; searches are never sold, shared, or used for advertising (details in
+[Privacy](#privacy)).
+
+**Efficient — shop thousands of stores in seconds:** one input fans out to
+multiple sources at once and comes back normalized into one structured
+contract you can build against. Repeat lookups return instantly. Use it for a
+cross-vendor price check from the store aisle or programmatic lookups inside
+your own application — same tool call, same answers.
+
+Free during v0. No signup. No API key. No commitment.
 
 ## Quick start
 
@@ -133,11 +147,13 @@ families) are on the roadmap.
 
 ## Sources, limits, and expectations
 
-- **Sources:** offers currently come from Google Shopping, with retailer-direct
-  integrations (Best Buy, Walmart) rolling out (each response lists exactly
-  what was queried in `meta.sources_queried`). GTIN inputs are resolved via
-  Icecat and UPCitemdb. More sources are added as the normalization layer
-  proves out.
+- **Sources — quality data, not screen-scraping:** we work through official
+  merchant and catalog partner programs and structured data sources so
+  results stay accurate rather than brittle. Today offers come from Google
+  Shopping, with retailer-direct integrations (Best Buy, Walmart) rolling
+  out; GTIN inputs are resolved via Icecat and UPCitemdb. Each response
+  lists exactly what was queried in `meta.sources_queried`, and where
+  sources disagree or fall short, the response says so.
 - **Latency:** a cold query takes roughly 5–15 seconds (live upstream
   lookups); repeated queries hit a short-lived cache and return in
   milliseconds. Configure generous tool timeouts.

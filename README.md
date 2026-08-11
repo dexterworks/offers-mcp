@@ -2,11 +2,11 @@
 
 **Every offer. One call.**
 
-Offers MCP is structured deal research for AI agents and applications. Point
+Offers MCP is structured deal research for AI agents, applications, and humans. Point
 it at a product — free text like `Sony WH-1000XM6 black`, or a GTIN/UPC/EAN
 barcode — add an optional US zip code, and one call scans merchants in
 parallel to return live prices, true cost, delivery options, and trust
-insights. Robust, private, efficient results for agents and humans to make
+insights. Robust, private, efficient results for agents, applications, and humans to make
 informed purchase decisions.
 
 **Robust — built to be trusted:**

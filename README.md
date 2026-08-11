@@ -22,7 +22,7 @@ informed purchase decisions.
 stored; queries stay private: never sold, shared, or used for retargeting
 (details in [Privacy](#privacy)).
 
-**Efficient. Shop thousands of stores in seconds:** one input fans out to
+**Efficient. Shop many stores in seconds:** one input fans out to
 multiple sources at once and comes back normalized into one structured
 contract you can build against. Repeat lookups return instantly. Use it for a
 cross-vendor price check from the store aisle or programmatic lookups inside

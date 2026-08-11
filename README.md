@@ -90,10 +90,32 @@ families) are on the roadmap.
 }
 ```
 
-## Status
+## Sources, limits, and expectations
 
-Early v0 — US consumer goods, a small set of sources done honestly. If a field
-can't be trusted, it's `null` rather than guessed. Feedback and issues
-welcome.
+- **Sources:** offers currently come from Google Shopping, with eBay and
+  Best Buy integrations rolling out (each response lists exactly what was
+  queried in `meta.sources_queried`). GTIN inputs are resolved via UPCitemdb.
+  More sources are added as the normalization layer proves out.
+- **Latency:** a cold query takes roughly 5–15 seconds (live upstream
+  lookups); repeated queries hit a short-lived cache and return in
+  milliseconds. Configure generous tool timeouts.
+- **Rate limits / fair use:** free during v0 with no hard published limit —
+  please stay under ~50 requests/day per user. Heavy or commercial use:
+  contact us first. The endpoint may evolve; breaking changes will be
+  announced in this repo.
+- **REST and MCP return the same JSON shape** (the MCP tool wraps it as text
+  content).
+- **Note when curling `/mcp` directly:** responses are SSE-framed
+  (`event: message` / `data: {...}`) per MCP streamable HTTP; MCP clients
+  handle this for you.
+
+## Status & support
+
+Early v0 — US consumer goods, a small set of sources done honestly. If a
+field can't be trusted, it's `null` rather than guessed.
+
+Found a bad result, wrong price, or a bug? **Open a
+[GitHub issue](https://github.com/dexterworks/offers-mcp/issues)** — bad-match
+reports with the exact query are especially valuable right now.
 
 Built by [Dexter Works](https://dexter-works.com).

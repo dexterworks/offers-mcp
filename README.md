@@ -162,10 +162,16 @@ families) are on the roadmap.
 - **Latency:** a cold query takes roughly 5–15 seconds (live upstream
   lookups); repeated queries hit a short-lived cache and return in
   milliseconds. Configure generous tool timeouts.
-- **Rate limits / fair use:** free during v0 with no hard published limit;
-  please stay under ~50 requests/day per user. Heavy or commercial use:
-  contact us first. The endpoint may evolve; breaking changes will be
-  announced in this repo.
+- **Rate limits / fair use:** free during v0. About **10 fresh lookups per
+  visitor per day** (cached queries are unlimited and don't count); over-cap
+  requests get an honest capacity message, and capacity resets daily (UTC).
+  Heavy or commercial use: contact us first. The endpoint may evolve;
+  breaking changes will be announced in this repo.
+- **Agent contract:** machine-readable guidance for agents (how to interpret
+  confidence, freshness, trust, and affiliate fields) lives at
+  [offers-engine.dexter-works.com/agents.md](https://offers-engine.dexter-works.com/agents.md).
+- **Feedback tool:** `report_feedback(query, verdict, note?)` files a result
+  report straight from your assistant; every report is read.
 - **REST and MCP return the same JSON shape** (the MCP tool wraps it as text
   content).
 - **Note when curling `/mcp` directly:** responses are SSE-framed
